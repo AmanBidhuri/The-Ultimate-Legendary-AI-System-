@@ -150,8 +150,7 @@ class JarvisUltra:
         print(line)
         try:
             with LOG_FILE.open("a", encoding="utf-8") as f:
-                f.write(line + "
-")
+                f.write(line + "\n")
         except Exception:
             pass
 
@@ -269,8 +268,7 @@ class JarvisUltra:
 
     def add_note(self, text: str) -> None:
         with NOTES_FILE.open("a", encoding="utf-8") as f:
-            f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | {text.strip()}
-")
+            f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | {text.strip()}\n")
 
     def clear_notes(self) -> None:
         NOTES_FILE.write_text("", encoding="utf-8")
